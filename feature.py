@@ -1,4 +1,4 @@
-def feature5(ins):
+def insertion_sort(ins):
     for i in range(len(ins)):
         j = i - 1
         temp = ins[i]
