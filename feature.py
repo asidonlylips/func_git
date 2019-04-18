@@ -1,4 +1,4 @@
-def feature3(args1, args2, diction = None):
+def new_dict(args1, args2, diction = None):
         dictionary = dict(zip(args1, args2))
         if isinstance(diction, dict):
             dictionary={**dictionary,**diction}
