@@ -1,9 +1,6 @@
 def insertion_sort(ins):
     for i in range(len(ins)):
-        j = i - 1
-        temp = ins[i]
-        while ins[j] > temp and j >= 0:
-            ins[j + 1] = ins[j]
-            j -= 1
-        ins[j + 1] = temp
+        while ins[i-1] > ins[i] and i-1 >= 0:
+            ins[i], ins[i-1] = ins[i-1], ins[i]
+            i -= 1
     return ins
