@@ -1,4 +1,13 @@
+from calendar import isleap
 from manager import Context_manager,write_to_file,read_file
+
+
+def is_leap_year_v1(year):
+    return (year % 4 == 0 and year % 100 != 0) or year % 400 == 0
+
+
+def is_leap_year_v2(year):
+    return True if isleap(year) else False  
 
 
 def insertion_sort(ins):
@@ -40,4 +49,3 @@ def last_numbers_of_row(numb):
     squares = map(lambda a: a**a, numbers)
     b = str(sum(squares))
     return (b[-10:])
-
