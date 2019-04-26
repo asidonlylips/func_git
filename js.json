@@ -1,0 +1,59 @@
+{ 
+	"INFORMATION": [
+
+		{
+			"year" : "1999"
+			"city" : "Mogilev"
+			"citizens" : "15"
+
+		}
+		{
+			"year" : "2000"
+			"city" : "Mogilev"
+			"citizens" : "16"
+
+		}
+		{
+			"year" : "2001"
+			"city" : "Mogilev"
+			"citizens" : "17"
+
+		}
+		{
+			"year" : "2002"
+			"city" : "Mogilev"
+			"citizens" : "18"
+
+		}
+		{
+			"year" : "2003"
+			"city" : "Mogilev"
+			"citizens" : "19"
+
+		}
+		{
+			"year" : "2004"
+			"city" : "Mogilev"
+			"citizens" : "20"
+
+		}
+		{
+			"year" : "2005"
+			"city" : "Mogilev"
+			"citizens" : "21"
+
+		}
+		{
+			"year" : "2006"
+			"city" : "Mogilev"
+			"citizens" : "22"
+
+		}
+		{
+			"year" : "2007"
+			"city" : "Mogilev"
+			"citizens" : "23"
+
+		}
+	 ]
+}
