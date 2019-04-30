@@ -1,48 +1,47 @@
 {
  	 "DATA": [
- 		{ 
-
- 		 {
+ 		 
+		{
 		"Name": "Sasha",
 		"Age": "19",
 		"hobbies, interests": ""
  		 },
- 		 {
+		{
 		"Name": "Vasya",
 		"Age": "20",
 		"hobbies, interests": "Cars, racing"
  		 },
- 		 {
+		{
 		"Name": "Petya",
 		"Age": "15",
 		"hobbies, interests": "PC, smt else"
  		 },
- 		 {
+		{
 		"Name": "Kolya",
 		"Age": "14",
 		"hobbies, interests": "no"
  		 },
- 		 {
+		{
 		"Name": "Vlad",
 		"Age": "16",
 		"hobbies, interests": "no"
  		 },
- 		 {
+		{
 		"Name": "Masha",
 		"Age": "14",
 		"hobbies, interests": "no"
  		 },
- 		 {
+		{
 		"Name": "Dasha",
 		"Age": "13",
 		"hobbies, interests": "no"
  		 },
- 		 {
+		{
 		"Name": "Nikita",
 		"Age": "20",
 		"hobbies, interests": "no"
  		 },
- 		 {
+		{
 		"Name": "Helen",
 		"Age": "21",
 		"hobbies, interests": "no"

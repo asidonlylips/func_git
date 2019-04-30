@@ -3,8 +3,7 @@ from abc import ABC, abstractmethod
 
 class File(ABC):
     def __init__(self):
-        self.filename = None
-        self.jsonname = None
+        pass
 
     @abstractmethod
     def processing(self):
@@ -16,7 +15,9 @@ class File(ABC):
 
 
 class Converter(File):
-    def __init__(self):
+    def __init__(self, filename, jsonname):
+        self.filename = filename
+        self.jsonname = jsonname
         self.processing_data = []
         self.json_data = []
         self.data = []
@@ -38,10 +39,10 @@ class Converter(File):
     def write_to_file(self):
         with open(self.jsonname, 'w') as f_write:
 
-            f_write.write('{' + '\n \t "DATA": [' + '\n \t\t{ \n')
+            f_write.write('{' + '\n \t "DATA": [' + '\n \t\t \n')
             outside_counter = 0
             for i in self.json_data:
-                f_write.write('\n \t\t {')
+                f_write.write('\t\t{')
                 outside_counter += 1
                 inside_counter = 0
                 for a, b in i:
@@ -54,7 +55,7 @@ class Converter(File):
 
                 f_write.write('\n \t\t }')
                 if outside_counter < len(self.json_data):
-                    f_write.write(',')
+                    f_write.write(',' + '\n')
             f_write.write('\n \t ] \n}')
 
 
@@ -65,10 +66,9 @@ def replaces(input_data):
 
 
 if __name__ == "__main__":
-    a = Converter()
-    a.filename = input('enter csv file name ')
-    a.jsonname = input('enter json file name ')
+    filename = input('enter csv file name ')
+    jsonname = input('enter json file name ')
+    a = Converter(filename, jsonname)
     a.filereader()
     a.processing()
     a.write_to_file()
-
