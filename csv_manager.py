@@ -1,44 +1,73 @@
-from manager import Context_manager
+from abc import ABC, abstractmethod
 
 
-class Csv_to_json:
+class File(ABC):
     def __init__(self):
         self.filename = None
-        self.jsonfile = None
-    
-    def reader(self):
-        with Context_manager(self.filename, 'r') as f_read:
-            data = []
-            headers = f_read.readline().replace('\n','').split(',')
-            for line in f_read.readlines():
-                data.append(list(zip(headers,line.replace('\n','').split(','))))
-            return data
+        self.jsonname = None
 
-    def write_to_json(self, data):
-        with Context_manager(self.jsonfile, 'a') as f_write:
-            f_write.write('{ \n')
-            f_write.write('\t'+'"INFORMATION":' + ' [' + '\n')
-            for i in range(len(data)):
-                f_write.write('\n'+'\t'*2 +"{"+'\n')
-                for j in range (len(data[0])):
-                    f_write.write('\t'*3+str(data[i][j]).replace("(","").replace(")","").replace(","," :").replace("'",'"')+"\n")
-                f_write.write('\n'+'\t\t' + "}")
-            f_write.write('\n' + '\t' + ' ]' + '\n')
-            f_write.write('}')
+    @abstractmethod
+    def processing(self):
+        pass
 
-            
-        
+    @abstractmethod
+    def write_to_file(self):
+        pass
 
+
+class Converter(File):
+    def __init__(self):
+        self.processing_data = []
+        self.json_data = []
+        self.data = []
+
+    def filereader(self):
+        with open('t.csv', 'r') as f_read:
+            self.data = f_read.readlines()
+
+    def processing(self):
+        for f_string in self.data:
+            line = f_string.replace(', ', '|').replace('"', '')
+            line = line.split(',')
+            self.processing_data.append(line)
+        headers = self.processing_data[0]
+        for i in range(len(self.processing_data)):
+            if i != 0:
+                self.json_data.append(list(zip(headers, self.processing_data[i])))
+
+    def write_to_file(self):
+        with open(self.jsonname, 'w') as f_write:
+
+            f_write.write('{' + '\n \t "DATA": [' + '\n \t\t{ \n')
+            outside_counter = 0
+            for i in self.json_data:
+                f_write.write('\n \t\t {')
+                outside_counter += 1
+                inside_counter = 0
+                for a, b in i:
+                    inside_counter += 1
+                    a = replaces(a)
+                    b = replaces(b)
+                    f_write.write('\n' + '\t' * 2 + '"{}": "{}"'.format(a, b))
+                    if inside_counter < len(i):
+                        f_write.write(',')
+
+                f_write.write('\n \t\t }')
+                if outside_counter < len(self.json_data):
+                    f_write.write(',')
+            f_write.write('\n \t ] \n}')
+
+
+def replaces(input_data):
+    output_data = input_data.rstrip("\n")
+    output_data = output_data.replace('|', ', ')
+    return output_data
 
 
 if __name__ == "__main__":
-    convert = Csv_to_json()
-    convert.filename = input("enter name of .csv file ")
-    convert.jsonfile = input("enter name of .json file ")
-    data = convert.reader()
-    convert.write_to_json(data)
-    
-
-            
-
-
+    a = Converter()
+    a.filename = input('enter csv file name ')
+    a.jsonname = input('enter json file name ')
+    a.filereader()
+    a.processing()
+    a.write_to_file()

@@ -1,59 +1,51 @@
-{ 
-	"INFORMATION": [
+{
+ 	 "DATA": [
+ 		{ 
 
-		{
-			"year" : "1999"
-			"city" : "Mogilev"
-			"citizens" : "15"
-
-		}
-		{
-			"year" : "2000"
-			"city" : "Mogilev"
-			"citizens" : "16"
-
-		}
-		{
-			"year" : "2001"
-			"city" : "Mogilev"
-			"citizens" : "17"
-
-		}
-		{
-			"year" : "2002"
-			"city" : "Mogilev"
-			"citizens" : "18"
-
-		}
-		{
-			"year" : "2003"
-			"city" : "Mogilev"
-			"citizens" : "19"
-
-		}
-		{
-			"year" : "2004"
-			"city" : "Mogilev"
-			"citizens" : "20"
-
-		}
-		{
-			"year" : "2005"
-			"city" : "Mogilev"
-			"citizens" : "21"
-
-		}
-		{
-			"year" : "2006"
-			"city" : "Mogilev"
-			"citizens" : "22"
-
-		}
-		{
-			"year" : "2007"
-			"city" : "Mogilev"
-			"citizens" : "23"
-
-		}
-	 ]
+ 		 {
+		"Name": "Sasha",
+		"Age": "19",
+		"hobbies, interests": ""
+ 		 },
+ 		 {
+		"Name": "Vasya",
+		"Age": "20",
+		"hobbies, interests": "Cars, racing"
+ 		 },
+ 		 {
+		"Name": "Petya",
+		"Age": "15",
+		"hobbies, interests": "PC, smt else"
+ 		 },
+ 		 {
+		"Name": "Kolya",
+		"Age": "14",
+		"hobbies, interests": "no"
+ 		 },
+ 		 {
+		"Name": "Vlad",
+		"Age": "16",
+		"hobbies, interests": "no"
+ 		 },
+ 		 {
+		"Name": "Masha",
+		"Age": "14",
+		"hobbies, interests": "no"
+ 		 },
+ 		 {
+		"Name": "Dasha",
+		"Age": "13",
+		"hobbies, interests": "no"
+ 		 },
+ 		 {
+		"Name": "Nikita",
+		"Age": "20",
+		"hobbies, interests": "no"
+ 		 },
+ 		 {
+		"Name": "Helen",
+		"Age": "21",
+		"hobbies, interests": "no"
+ 		 }
+ 	 ] 
 }

@@ -1,10 +1,10 @@
-year,city,citizens
-1999,Mogilev,15
-2000,Mogilev,16
-2001,Mogilev,17
-2002,Mogilev,18
-2003,Mogilev,19
-2004,Mogilev,20
-2005,Mogilev,21
-2006,Mogilev,22
-2007,Mogilev,23
+Name,Age,"hobbies, interests"
+Sasha,19,
+Vasya,20,"Cars, racing"
+Petya,15,"PC, smt else"
+Kolya,14,no
+Vlad,16,no
+Masha,14,no
+Dasha,13,no
+Nikita,20,no
+Helen,21,no
