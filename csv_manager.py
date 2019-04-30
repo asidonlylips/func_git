@@ -3,8 +3,7 @@ from abc import ABC, abstractmethod
 
 class File(ABC):
     def __init__(self):
-        self.filename = None
-        self.jsonname = None
+        pass
 
     @abstractmethod
     def processing(self):
@@ -16,7 +15,9 @@ class File(ABC):
 
 
 class Converter(File):
-    def __init__(self):
+    def __init__(self, filename, jsonname):
+        self.filename = filename
+        self.jsonname = jsonname
         self.processing_data = []
         self.json_data = []
         self.data = []
@@ -65,10 +66,9 @@ def replaces(input_data):
 
 
 if __name__ == "__main__":
-    a = Converter()
-    a.filename = input('enter csv file name ')
-    a.jsonname = input('enter json file name ')
+    filename = input('enter csv file name ')
+    jsonname = input('enter json file name ')
+    a = Converter(filename, jsonname)    
     a.filereader()
     a.processing()
     a.write_to_file()
-
