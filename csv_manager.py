@@ -41,16 +41,16 @@ class Converter(File):
 
             f_write.write('{' + '\n \t "DATA": [' + '\n \t\t \n')
             outside_counter = 0
-            for i in self.json_data:
+            for key_and_value in self.json_data:
                 f_write.write('\t\t{')
                 outside_counter += 1
                 inside_counter = 0
-                for a, b in i:
+                for key, value in key_and_value:
                     inside_counter += 1
-                    a = replaces(a)
-                    b = replaces(b)
-                    f_write.write('\n' + '\t' * 2 + '"{}": "{}"'.format(a, b))
-                    if inside_counter < len(i):
+                    key = replaces(key)
+                    value = replaces(value)
+                    f_write.write('\n' + '\t' * 2 + '"{}": "{}"'.format(key, value))
+                    if inside_counter < len(key_and_value):
                         f_write.write(',')
 
                 f_write.write('\n \t\t }')
